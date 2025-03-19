@@ -1,0 +1,26 @@
+<html>
+<script src="https://cfsb2bcommerce-dev-ed.my.site.com/consolidated/lightning/lightning.out.js"></script>
+
+<div id="lightning-out"></div>
+
+<script>
+    const appName = 'c:lightingout'
+    const componentName = 'c:corousalHomePage'
+    const lightningEndPoint = 'https://cfsb2bcommerce-dev-ed.my.site.com/consolidated'
+
+    $Lightning.use(
+        appName , // name of the Lightning Out app
+        function () { // callback after the framework and app load
+            $Lightning.createComponent(
+                componentName, // top-level component of the Lightning Out app
+                {}, // attributes to set on the component
+                'lightning-out', // DOM element ID where the component is inserted
+                function (cmp) { // callback after the component loads
+                    console.log('The component was created.');
+                }
+            );
+        },
+        lightningEndPoint
+    );
+</script>
+</html>
